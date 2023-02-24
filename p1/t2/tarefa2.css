@@ -1,0 +1,26 @@
+/*
+Acessos: fonte TAHOMA, azul, tam. 14px.
+Títulos: fonte Arial, vermelho, tam. 16px.
+Textos: fonte TAHOMA, preto, tam. 12px.
+*/
+body {
+    background-color: #FFDEAD;
+}
+
+h1 {
+    font-family: Arial;
+    color: red;
+    font-size: 16px;
+}
+
+p {
+    font-family: TAHOMA;
+    color: black;
+    font-size: 12px;
+}
+
+a:link {
+    font-family: TAHOMA;
+    color: blue;
+    font-size: 14px;
+}
