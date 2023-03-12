@@ -1,0 +1,53 @@
+/*
+Cor de fundo de página com código #FFDEAD
+Acessos: fonte TAHOMA, azul, tam. 14px.
+Títulos: fonte Arial, vermelho, tam. 16px.
+Textos: fonte TAHOMA, preto, tam. 12px.
+Tabela: 85% da largura da tela do navegador.
+*/
+body {
+    background-color: #FFDEAD;
+}
+
+h1 {
+    font-family: Arial;
+    color: red;
+    font-size: 16px;
+}
+
+p {
+    font-family: TAHOMA;
+    color: black;
+    font-size: 12px;
+}
+
+a:link {
+    font-family: TAHOMA;
+    color: blue;
+    font-size: 14px;
+}
+
+table {
+    width: 85%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+td,tr {
+    border: 3px solid black;
+    padding: 20px;
+    text-align: left;
+}
+
+th{
+    text-align: center;
+    font-family: Arial;
+    color: red;
+    font-size: 16px;    
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
