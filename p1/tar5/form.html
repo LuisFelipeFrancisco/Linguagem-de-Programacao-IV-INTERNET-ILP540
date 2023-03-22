@@ -1,0 +1,123 @@
+<html>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='./tarefa5.css'>
+     <body>
+        <form action='./tratador.php' method='post'>
+            <table>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type='text' name='nome' size='100'></td>
+                </tr>
+                <tr>
+                    <td>Senha:</td>
+                    <td><input type='password' name='senha' size='100'></td>
+                </tr>
+                <tr>
+                    <td>Sexo:</td>
+                    <td><input type='radio' name='sexo' value='M'>Masculino 
+                        <input type='radio' name='sexo' value='F'>Feminino
+                        <input type='radio' name='sexo' value='O'>Outros</td>
+                </tr>
+                <tr>
+                    <td>Estado:</td>
+                    <td><select name='estado'>
+                            <option value=''>Selecione um estado</option>
+                            <option value='AC'>Acre</option>
+                            <option value='AL'>Alagoas</option>
+                            <option value='AP'>Amapá</option>
+                            <option value='AM'>Amazonas</option>
+                            <option value='BA'>Bahia</option>
+                            <option value='CE'>Ceará</option>
+                            <option value='DF'>Distrito Federal</option>
+                            <option value='ES'>Espírito Santo</option>
+                            <option value='GO'>Goiás</option>
+                            <option value='MA'>Maranhão</option>
+                            <option value='MT'>Mato Grosso</option>
+                            <option value='MS'>Mato Grosso do Sul</option>
+                            <option value='MG'>Minas Gerais</option>
+                            <option value='PA'>Pará</option>
+                            <option value='PB'>Paraíba</option>
+                            <option value='PR'>Paraná</option>
+                            <option value='PE'>Pernambuco</option>
+                            <option value='PI'>Piauí</option>
+                            <option value='RJ'>Rio de Janeiro</option>
+                            <option value='RN'>Rio Grande do Norte</option>
+                            <option value='RS'>Rio Grande do Sul</option>
+                            <option value='RO'>Rondônia</option>
+                            <option value='RR'>Roraima</option>
+                            <option value='SC'>Santa Catarina</option>
+                            <option value='SP'>São Paulo</option>
+                            <option value='SE'>Sergipe</option>
+                            <option value='TO'>Tocantins</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Hobbies:</td>
+                    <td><input type='checkbox' name='hobbies[]' value='musica'>Música 
+                        <input type='checkbox' name='hobbies[]' value='esporte'>Esporte
+                        <input type='checkbox' name='hobbies[]' value='leitura'>Leitura
+                        <input type='checkbox' name='hobbies[]' value='cinema'>Cinema</td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type='text' name='email' size='100'></td>
+                </tr>
+                <tr>
+                    <td>Telefone:</td>
+                    <td><input type='tel' name='telefone' size='100'></td>
+                </tr>
+                <tr>
+                    <td>Data de Nascimento:</td>
+                    <td><input type='date' name='datanascimento'></td>
+                </tr>
+                <tr>
+                    <td>Data:</td> <!-- Funciona melhor no chrome -->
+                    <td><input type='datetime-local' name='data'></td>
+                </tr>
+                <tr>
+                    <td>Hora:</td> <!-- Funciona melhor no chrome -->
+                    <td><input type='time' name='hora'></td>
+                </tr>
+                <tr>
+                    <td>Semana:</td> <!-- Funciona melhor no chrome -->
+                    <td><input type='week' name='semana'></td>
+                </tr>
+                <tr>
+                    <td>Mês:</td> <!-- Funciona melhor no chrome -->
+                    <td><input type='month' name='mes'></td>
+                </tr>
+                <tr>
+                    <td>Número:</td>
+                    <td><input type='number' name='numero'></td>
+                </tr>
+                <tr>
+                    <td>Range:</td>
+                    <td><input type='range' name='range'></td>
+                </tr>
+                <tr>
+                    <td>Site:</td>
+                    <td><input type='url' name='site' size='100'></td>
+                </tr>
+                <tr>
+                    <td>Cor Favorita:</td>
+                    <td><input type='color' name='corfavorita'></td>
+                </tr>
+                <tr>
+                    <td>Arquivo:</td>
+                    <td><input type='file' name='arquivo'></td>
+                </tr>
+                <tr>
+                    <td>Observações:</td>
+                    <td><textarea name='observacoes' rows='5' cols='50'></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type='submit' value='Enviar'>
+                        <input type='reset' value='Limpar'>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
