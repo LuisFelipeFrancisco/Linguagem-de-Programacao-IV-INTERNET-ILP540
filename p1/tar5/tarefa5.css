@@ -34,7 +34,7 @@ table {
 }
 td,tr {
     border: 3px solid black;
-    padding: 20px;
+    padding-left: 15px;
     text-align: left;
 }
 
@@ -53,15 +53,14 @@ button {
 }
 
 #div1 { 
-    position: fixed; /* fixa o header na parte superior da tela */
-    top: 0; /* posiciona o header na parte superior da tela */
-    width: 100%; 
+    position: fixed;
+    top: 0;
+    width: 100%;
     border: 0px;
-    height: 150px;
+    height: 110px;
 }
 #div2 {
-    margin-top: 100px;
-    padding-top: 50px;
+    margin-top: calc(110px + 10px); /* 85px é a altura do header e 10px é o espaçamento entre o header e o conteúdo da página */
     width: 100vw; /* 1 vw ou 1 vh equivale a 1% da largura ou altura da tela do navegador */
     height: 100vh; 
 }
@@ -77,8 +76,9 @@ iframe {
     top: 0;
     border: 0px;
     width: 99%; /* alinhando as bordas */
+    overflow: hidden;
 }
 
 #div4 { /* esta comendo o conteúdo :((((( */
-    margin-top: 110px;
+    margin-top: 80px;
 }
