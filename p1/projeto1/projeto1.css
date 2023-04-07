@@ -1,0 +1,61 @@
+body { background-color: #FAF0E6; 
+       margin: 0; 
+       padding: 0; }
+table { width: 100%; 
+        padding: 0px; 
+        border-spacing: 0px; 
+        margin-left: auto; 
+        margin-right: auto; }
+th { font-family: Arial; 
+     color: red; 
+     font-size: 16px; 
+     padding: 0px; }
+td { padding: 0px; 
+     font-family: Tahoma; 
+     color: black; 
+     font-size: 12px; }
+button { background-color: transparent; 
+         border: none; 
+         font-family: Tahoma; 
+         font-size: 14px; 
+         cursor: pointer; }
+h1 { color: blue; 
+     font-size: 18px; 
+     font-weight: normal; }
+a { font-family: Tahoma; 
+    color: blue; 
+    font-size: 14px; }
+
+.celulavazia { width: 10%; }
+.centertexto { text-align: center; }
+.titulo { font-family: Arial; 
+          color: red; 
+          font-size: 16px; 
+          font-weight: bold; 
+          text-decoration: underline; }
+.texto { font-family: Tahoma;
+         color: black;
+         font-size: 12px; }
+.table95 { width: 95%; }
+.tableRelatorio { border: 1px solid #000; 
+                  border-collapse: collapse; 
+                  width: 95%;
+                  text-align: center; }
+.preto { color: #000; }
+
+#menu { height: 70px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1; }
+#conteudo { height: calc(100% - 70px); 
+            width: 100%; 
+            position: fixed; 
+            top: 70px; 
+            z-index: 0; }
+#lightgreen { background-color:lightgreen;  
+              font-weight:bold; }
+#white { background-color:white;
+         font-weight:bold; }
+#lightblue { background-color:lightblue;
+             font-weight:bold; }
