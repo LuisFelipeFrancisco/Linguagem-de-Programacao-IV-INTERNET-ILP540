@@ -44,32 +44,34 @@ switch(true)
   case ($bloco==2):
   { 
     $cmdsql="SELECT o.*,
-                        lt.txnometipologradouro AS txttipologradouro,
-                        l.txnomelogradouro AS txtnomelogradouro, 
-                        c.txnomecidade AS txtcidade
+                    lt.txnometipologradouro AS txttipologradouro,
+                    l.txnomelogradouro AS txtnomelogradouro, 
+                    c.txnomecidade AS txtcidade,
+                    es.pkestadouniao AS txtestado
             FROM oficinas AS o
             INNER JOIN logradouros as l ON o.fklogradouro = l.pklogradouro
             INNER JOIN cidades AS c ON l.fkcidade = c.pkcidade
+            INNER JOIN estadosdauniao AS es ON c.fkestadouniao = es.pkestadouniao
             INNER JOIN logradourostipos AS lt ON l.fklogradourotipo = lt.pklogradourotipo
-            where pkoficina='$_REQUEST[pkoficina]'";
+            WHERE pkoficina='$_REQUEST[pkoficina]'";
 	
 	$execcmd=mysqli_query($conex,$cmdsql);
 	
 	$reg=mysqli_fetch_array($execcmd);
 	
-	printf("   <table>\n");
-    printf("    <tr><td>Código:</td>                <td>$reg[pkoficina]</td></tr>\n");
-    printf("    <tr><td>Nome:</td>                  <td>$reg[txnomeoficina]</td></tr>\n");
-    printf("    <tr><td>Apelido:</td>               <td>$reg[txapelido]</td></tr>\n");
-    printf("    <tr><td colspan=2><hr>Endereço</td></tr>\n");
-    printf("    <tr><td>Logradouro:</td>            <td>$reg[txttipologradouro] $reg[txtnomelogradouro]-($reg[fklogradouro])</td></tr>\n");
-    printf("    <tr><td>Complemento:</td>           <td>$reg[txcomplemento]</td></tr>\n");
-    printf("    <tr><td>Cidade:</td>                <td>$reg[txtcidade]</td></tr>\n");
-    printf("    <tr><td>CEP:</td>                   <td>$reg[nucep]</td></tr>\n");
-    printf("    <tr><td colspan=2><hr></td></tr>\n");
-    printf("    <tr><td>Cadastrado em</td>          <td>$reg[dtcadoficina]</td></tr>\n");
-    printf("    <tr><td></td><td></td></tr>\n");
-	printf("   </table>\n");
+	printf("<table>\n");
+      printf("<tr><td>Código:</td>                <td>$reg[pkoficina]</td></tr>\n");
+      printf("<tr><td>Nome:</td>                  <td>$reg[txnomeoficina]</td></tr>\n");
+      printf("<tr><td>Apelido:</td>               <td>$reg[txapelido]</td></tr>\n");
+      printf("<tr><td colspan=2><hr>Endereço</td></tr>\n");
+      printf("<tr><td>Logradouro:</td>            <td>$reg[txttipologradouro] $reg[txtnomelogradouro]-($reg[fklogradouro])</td></tr>\n");
+      printf("<tr><td>Complemento:</td>           <td>$reg[txcomplemento]</td></tr>\n");
+      printf("<tr><td>Cidade:</td>                <td>$reg[txtcidade]-$reg[txtestado]</td></tr>\n");
+      printf("<tr><td>CEP:</td>                   <td>$reg[nucep]</td></tr>\n");
+      printf("<tr><td colspan=2><hr></td></tr>\n");
+      printf("<tr><td>Cadastrado em:</td>          <td>$reg[dtcadoficina]</td></tr>\n");
+      printf("<tr><td></td><td></td></tr>\n");
+	printf("</table>\n");
 	
 	printf("   <button onclick='history.go(-1)'>< 1 pag.</button>\n");
     printf("   <button onclick='history.go(-$bloco)'>Sair</button>\n");
