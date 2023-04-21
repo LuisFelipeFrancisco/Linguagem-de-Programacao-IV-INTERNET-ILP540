@@ -10,7 +10,7 @@
 # Criação....: 2023-04-20
 # Atualização: 2023-04-20 
 #######################################################################################################################
-# Requerendo a execução do ToolsKit.php
+
 require_once("./toolskit.php"); 
 
 $conex=mysqli_connect("localhost","root","","ilp540");
@@ -26,19 +26,19 @@ switch(true)
     $cmdsql="SELECT pkoficina, txnomeoficina FROM oficinas";
     $execcmd=mysqli_query($conex,$cmdsql);
     
-    printf("  <form action='oficinas.php' method='post'>\n");
-    printf("   <input type='hidden' name='bloco' value=2>\n");
-    printf("   Escolha uma oficina: ");
-    printf("   <select name='pkoficina'>\n");
+    printf("<form action='oficinas.php' method='post'>\n");
+    printf("<input type='hidden' name='bloco' value=2>\n");
+    printf("Escolha uma oficina: ");
+    printf("<select name='pkoficina'>\n");
     
     while ( $reg=mysqli_fetch_array($execcmd) )
     { 
       printf("<option value='$reg[pkoficina]'>$reg[txnomeoficina]-($reg[pkoficina])</option>\n");
     }
-    printf("   </select>\n");
-    printf("   <button type='submit'>Consultar</button>\n");
-    printf("   <button onclick='history.go(-$bloco)'>Sair</button>\n");
-    printf("  </form>\n");
+    printf("</select>\n");
+    printf("<button type='submit'>Consultar</button>\n");
+    printf("<button onclick='history.go(-$bloco)'>Sair</button>\n");
+    printf("</form>\n");
     break;
   }
   case ($bloco==2):
@@ -59,22 +59,22 @@ switch(true)
 	
 	$reg=mysqli_fetch_array($execcmd);
 	
-	printf("<table>\n");
-      printf("<tr><td>Código:</td>                <td>$reg[pkoficina]</td></tr>\n");
-      printf("<tr><td>Nome:</td>                  <td>$reg[txnomeoficina]</td></tr>\n");
-      printf("<tr><td>Apelido:</td>               <td>$reg[txapelido]</td></tr>\n");
-      printf("<tr><td colspan=2><hr>Endereço</td></tr>\n");
-      printf("<tr><td>Logradouro:</td>            <td>$reg[txttipologradouro] $reg[txtnomelogradouro]-($reg[fklogradouro])</td></tr>\n");
-      printf("<tr><td>Complemento:</td>           <td>$reg[txcomplemento]</td></tr>\n");
-      printf("<tr><td>Cidade:</td>                <td>$reg[txtcidade]-$reg[txtestado]</td></tr>\n");
-      printf("<tr><td>CEP:</td>                   <td>$reg[nucep]</td></tr>\n");
-      printf("<tr><td colspan=2><hr></td></tr>\n");
-      printf("<tr><td>Cadastrado em:</td>          <td>$reg[dtcadoficina]</td></tr>\n");
-      printf("<tr><td></td><td></td></tr>\n");
-	printf("</table>\n");
+  printf("<table>\n");
+    printf("<tr><td>Código:</td>                <td>$reg[pkoficina]</td></tr>\n");
+    printf("<tr><td>Nome:</td>                  <td>$reg[txnomeoficina]</td></tr>\n");
+    printf("<tr><td>Apelido:</td>               <td>$reg[txapelido]</td></tr>\n");
+    printf("<tr><td colspan=2><hr>Endereço</td></tr>\n");
+    printf("<tr><td>Logradouro:</td>            <td>$reg[txttipologradouro] $reg[txtnomelogradouro]-($reg[fklogradouro])</td></tr>\n");
+    printf("<tr><td>Complemento:</td>           <td>$reg[txcomplemento]</td></tr>\n");
+    printf("<tr><td>Cidade:</td>                <td>$reg[txtcidade]-$reg[txtestado]</td></tr>\n");
+    printf("<tr><td>CEP:</td>                   <td>$reg[nucep]</td></tr>\n");
+    printf("<tr><td colspan=2><hr></td></tr>\n");
+    printf("<tr><td>Cadastrado em:</td>          <td>$reg[dtcadoficina]</td></tr>\n");
+    printf("<tr><td></td><td></td></tr>\n");
+  printf("</table>\n");
 	
-	printf("   <button onclick='history.go(-1)'>< 1 pag.</button>\n");
-    printf("   <button onclick='history.go(-$bloco)'>Sair</button>\n");
+	printf("<button onclick='history.go(-1)'>< 1 pag.</button>\n");
+    printf("<button onclick='history.go(-$bloco)'>Sair</button>\n");
     break;
   }
 }
