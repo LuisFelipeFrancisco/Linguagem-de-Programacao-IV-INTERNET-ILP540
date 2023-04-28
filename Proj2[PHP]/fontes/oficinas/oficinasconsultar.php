@@ -11,7 +11,7 @@
 # Atualização: 2023-04-20 
 #######################################################################################################################
 
-require_once("./toolskit.php"); 
+require_once("../../funcoes/toolskit.php"); 
 
 $conex=mysqli_connect("localhost","root","","ilp540");
 
@@ -23,10 +23,10 @@ switch(true)
 {
   case ($bloco==1):
   {
-    $cmdsql="SELECT pkoficina, txnomeoficina FROM oficinas";
+    $cmdsql="SELECT pkoficina, txnomeoficina FROM oficinas ORDER BY txnomeoficina";
     $execcmd=mysqli_query($conex,$cmdsql);
     
-    printf("<form action='oficinas.php' method='post'>\n");
+    printf("<form action='oficinasconsultar.php' method='post'>\n");
     printf("<input type='hidden' name='bloco' value=2>\n");
     printf("Escolha uma oficina: ");
     printf("<select name='pkoficina'>\n");
@@ -49,7 +49,7 @@ switch(true)
                     c.txnomecidade AS txtcidade,
                     es.pkestadouniao AS txtestado
             FROM oficinas AS o
-            INNER JOIN logradouros as l ON o.fklogradouro = l.pklogradouro
+            INNER JOIN logradouros AS l ON o.fklogradouro = l.pklogradouro
             INNER JOIN cidades AS c ON l.fkcidade = c.pkcidade
             INNER JOIN estadosdauniao AS es ON c.fkestadouniao = es.pkestadouniao
             INNER JOIN logradourostipos AS lt ON l.fklogradourotipo = lt.pklogradourotipo
