@@ -1,8 +1,11 @@
 <?php
+
 require_once("../../funcoes/toolskit.php");
-$conex=mysqli_connect("localhost","root","","ilp540");
+
 $bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1 ;
+
 iniciapagina("Excluir","oficinas");
+
 switch(true)
 {
     case ($bloco==1):
@@ -86,6 +89,8 @@ switch(true)
         printf("$mens<br>\n");
         break;
     }
-}   
+}
+
 terminapagina();
+
 ?>

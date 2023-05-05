@@ -1,19 +1,6 @@
 <?php
-#######################################################################################################################
-# Objetivo...: Apresentar a estruturação de um PA que faz a consulta de dados de uma tabela.
-# Descrição..: Faz a conexão com uma base de dados. Determina a execução do bloco 1 do PA recursivo.
-#              No bloco 1 faz a leitura dos dados de uma tabela (projeção) e monta uma
-#              Caixa de Seleção (PickList). Na picklist mostra um campo descritivo da tabela e
-#              associa cada linha exibida ao valor da PK da tabela.
-#              No bloco 2 lê o valor da PK escolhida, acessa e lê a linha da tabela e mostra os
-#              dados em formato de tabela.
-# Criação....: 2023-04-20
-# Atualização: 2023-04-20 
-#######################################################################################################################
 
 require_once("../../funcoes/toolskit.php"); 
-
-$conex=mysqli_connect("localhost","root","","ilp540");
 
 $bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1 ;
 
@@ -71,5 +58,7 @@ switch(true)
         printf("</form>\n");
   }
 }
+
 terminapagina();
+
 ?>

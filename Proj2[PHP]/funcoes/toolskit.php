@@ -1,4 +1,5 @@
 <?php
+
 function iniciapagina($titulo, $tab)
 {
   printf("<html>\n");
@@ -9,10 +10,14 @@ function iniciapagina($titulo, $tab)
   printf(" <body class='$cor'>\n");
   printf(" $titulo<br>");
 }
+
 function terminapagina()
 {
   printf("</body>\n");
   printf("</html>\n");
 }
+
+global $conex;
+$conex=mysqli_connect("localhost","root","","ilp540");
 
 ?>
