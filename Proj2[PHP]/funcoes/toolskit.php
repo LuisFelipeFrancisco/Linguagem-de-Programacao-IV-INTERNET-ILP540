@@ -17,7 +17,12 @@ function terminapagina()
   printf("</html>\n");
 }
 
-global $conex;
-$conex=mysqli_connect("localhost","root","","ilp540");
+function conectamariadb($server,$username,$senha,$dbname)
+{ 
+  global $link;
+  $link=mysqli_connect($server,$username,$senha,$dbname);
+}
+
+conectamariadb("localhost","root","","ilp540");
 
 ?>

@@ -2,10 +2,10 @@
 
 function picklist($acao)
 {
-    global $conex;
+    global $link;
     $prg=($acao=="Consultar")?"oficinasconsultar.php":(($acao=="Excluir")?"oficinasexcluir.php":"oficinasalterar.php");
     $cmdsql="SELECT pkoficina, txnomeoficina FROM oficinas ORDER BY txnomeoficina";
-    $execcmd=mysqli_query($conex,$cmdsql);
+    $execcmd=mysqli_query($link,$cmdsql);
 
     printf("<form action='./$prg' method='post'>\n");
     printf("<input type='hidden' name='bloco' value=2>\n");
@@ -19,21 +19,21 @@ function picklist($acao)
 
     printf("</select>\n");
 
-    botoes($acao,TRUE,TRUE,TRUE);
+    botoes($acao,TRUE,TRUE);
 
     printf("</form>\n");
 }
 
 function mostraregistro($PK)
 {
-    global $conex;
+    global $link;
     $cmdsql="SELECT o.*, 
                     l.txnomelogrcompleto AS txtlogradouro
                     FROM oficinas AS o
                     INNER JOIN logradouroscompletos AS l ON o.fklogradouro = l.pklogradouro
                     WHERE pkoficina='$PK'";
 
-    $execcmd=mysqli_query($conex,$cmdsql);
+    $execcmd=mysqli_query($link,$cmdsql);
     $reg=mysqli_fetch_array($execcmd);
 
     printf("<table>\n");
@@ -50,13 +50,33 @@ function mostraregistro($PK)
     printf("</table>\n");
 }
 
-function botoes($acao,$limpar,$voltar,$sair)
-{
+function montamenu($acao,$sair)
+{ 
+    printf("<div class='$acao'>\n");
+    printf("<div class='menu'>\n");
+    printf("<form action='' method='POST'>\n");
+    printf("<input type='hidden' name='sair' value='$sair'>\n");
+    printf("<titulo>Oficinas:</titulo>\n");
+    printf("<button class='ins' type='submit' formaction='./oficinasincluir.php'  >Incluir</button>\n"); # &#x1f7a5;
+    printf("<button class='alt' type='submit' formaction='./oficinasalterar.php'  >Alterar</button>\n"); # &#x1f589;
+    printf("<button class='del' type='submit' formaction='./oficinasexcluir.php'  >Excluir</button>\n"); # &#x1f7ac;
+    printf("<button class='con' type='submit' formaction='./oficinasconsultar.php'>Consultar</button>\n"); # &#x1f50d;&#xfe0e;
+    printf("<button class='lst' type='submit' formaction='./oficinaslistar.php'   >Listar</button>\n"); # &#x1f5a8;
+    $menu=$sair-1;
+    printf(($menu>0) ? "<input class='imp' type='button' value='Abertura' onclick='history.go(-$menu)'>" : "");
+    printf("<input class='imp' type='button' value='Sair' onclick='history.go(-$sair)'>\n");
+    printf(" </form>\n");
+    printf("</div>\n");
+    printf("<redbold>$acao</redbold><hr>\n");
+    printf("</div>\n<br><br><br>\n");
+}
+
+function botoes($acao,$limpar,$voltar)
+{ 
     $barra="";
-    $barra=( $acao!="" ) ? $barra."<button type='submit'>$acao</button>" : "";
-    $barra=(  $limpar  ) ? $barra."<button type='reset'>Limpar</button>" : $barra ;
-    $barra=(  $voltar  ) ? $barra."<button onclick='history.go(-1)'>< 1 pag.</button>" : $barra ;
-    $barra=(  $sair    ) ? $barra."<button onclick='history.go(-$sair)'>Sair</button>" : $barra ;;
+    $barra=( $acao!="" ) ? $barra."<input class='imp' type='submit' value='$acao'>" : "";
+    $barra=(  $limpar  ) ? $barra."<input class='imp' type='reset'  value='Limpar'>" : $barra ;
+    $barra=(  $voltar  ) ? $barra."<input class='imp' type='button' value='Voltar' onclick='history.go(-1)'>" : $barra ;
     printf("$barra\n");
 }
 
