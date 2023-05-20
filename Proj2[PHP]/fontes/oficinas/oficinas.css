@@ -1,7 +1,10 @@
 body           { font-family: TAHOMA, Arial, sans-serif; font-size: 14px; color:black; }
-body.linen     { background-color:#FAF0E6; }
-body.lightblue { background-color:#ADD8E6; }
-body.white     { background-color:#FFFFFF; }
+body.consultar     { background-color:#FAF0E6; }
+body.excluir       { background-color:#ADD8E6; }
+body.incluir       { background-color:#00ffd9; }
+body.alterar       { background-color:#F39D60; }
+body.listar        { background-color:#E5A678; }
+body.abertura      { background-color:#FFDEAD; }
 vermelhoforte  { font-size: 18px; color:red; font-weight:bold; }
 button         { background-color:transparent;
                  font-family: TAHOMA, Arial, sans-serif; font-size:16px;

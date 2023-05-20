@@ -7,6 +7,9 @@ function picklist($acao)
     $cmdsql="SELECT pkoficina, txnomeoficina FROM oficinas ORDER BY txnomeoficina";
     $execcmd=mysqli_query($link,$cmdsql);
 
+    $sair=$_REQUEST['sair']+1;
+    $menu=$_REQUEST['sair'];
+
     printf("<form action='./$prg' method='post'>\n");
     printf("<input type='hidden' name='bloco' value=2>\n");
     printf("Escolha uma oficina: ");
@@ -19,7 +22,7 @@ function picklist($acao)
 
     printf("</select>\n");
 
-    botoes($acao,TRUE,TRUE);
+    botoes($acao,TRUE,FALSE);
 
     printf("</form>\n");
 }
@@ -65,7 +68,7 @@ function montamenu($acao,$sair)
     $menu=$sair-1;
     printf(($menu>0) ? "<input class='imp' type='button' value='Abertura' onclick='history.go(-$menu)'>" : "");
     printf("<input class='imp' type='button' value='Sair' onclick='history.go(-$sair)'>\n");
-    printf(" </form>\n");
+    printf("</form>\n");
     printf("</div>\n");
     printf("<redbold>$acao</redbold><hr>\n");
     printf("</div>\n<br><br><br>\n");

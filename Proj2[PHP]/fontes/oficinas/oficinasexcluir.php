@@ -1,13 +1,13 @@
 <?php
 
-require_once("../../funcoes/toolskit.php");
+require_once("../../funcoes/catalogo.php");
 require_once("./oficinasfuncoes.php");
 
-$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1 ;
-$sair=( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 0 ;
-$menu=( ISSET($_REQUEST['menu']) ) ? $_REQUEST['menu'] : 0 ;
+$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1;
+$sair= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair']+1 : 0;
+$menu= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 1;
 
-iniciapagina("Excluir","oficinas");
+iniciapagina(TRUE,"Oficinas","oficinas","Excluir");
 montamenu("Excluir",$sair);
 
 switch(true)
@@ -30,7 +30,6 @@ switch(true)
     case ( $bloco==3 ):
     {
         $cmdsql="DELETE FROM oficinas WHERE pkoficina='$_REQUEST[pkoficina]'";
-        /* printf("$cmdsql<br>\n"); */
         $tenta=TRUE;
         while ( $tenta )
         {
@@ -58,11 +57,10 @@ switch(true)
             }
         }
         printf("$mens<br>\n");
-        botoes("",FALSE,TRUE);
         break;
     }
 }
 
-terminapagina();
+terminapagina("Oficinas","Excluir","oficinasexcluir.php");
 
 ?>

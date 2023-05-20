@@ -1,13 +1,13 @@
 <?php
 
-require_once("../../funcoes/toolskit.php");
+require_once("../../funcoes/catalogo.php");
 require_once("./oficinasfuncoes.php");
 
-$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1 ;
-$sair=( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 0 ;
-$menu=( ISSET($_REQUEST['menu']) ) ? $_REQUEST['menu'] : 0 ;
+$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1;
+$sair= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair']+1 : 0;
+$menu= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 1;
 
-iniciapagina("Incluir","oficinas");
+iniciapagina(TRUE,"Oficinas","oficinas","Incluir");
 montamenu("Incluir",$sair);
 
 switch(true)
@@ -36,12 +36,12 @@ switch(true)
         
         printf("</select>\n");
         printf("</td></tr>\n");
-        printf("<tr><td>Complemento:</td>    <td><input type='text' name='txcomplemento' size='50' maxlength='50'></td></tr>\n");
-        printf("<tr><td>CEP:</td>            <td><input type='text' name='nucep' size='8' maxlength='8'></td></tr>\n");
+        printf("<tr><td>Complemento:</td>    <td><input type='text' name='txcomplemento' size='10' maxlength='10'></td></tr>\n");
+        printf("<tr><td>CEP:</td>            <td><input type='text' name='nucep' size='10' maxlength='8'></td></tr>\n");
         printf("<tr><td colspan=2><hr></td></tr>\n");
         printf("<tr><td>Cadastrado em:</td>  <td><input type='date' name='dtcadoficina'></td></tr>\n");
         printf("<tr><td></td>                <td>");
-        botoes("Incluir",TRUE,TRUE); # MUDAR ULTIMO BOTÃO DEPOIS
+        botoes("Incluir",TRUE,FALSE);
         printf("</td></tr>\n");
         printf("</table>\n");
         printf("</form>\n");
@@ -97,12 +97,11 @@ switch(true)
         if ( $mostrar )
         {
             mostraregistro("$CP",);
-            botoes("",FALSE,TRUE); 
         }
         break;
     }
 }
 
-terminapagina();
+terminapagina("Oficinas","Incluir","oficinasincluir.php");
 
 ?>
