@@ -57,21 +57,21 @@ function montamenu($acao,$sair)
 { 
     printf("<div class='$acao'>\n");
     printf("<div class='menu'>\n");
-    printf("<form action='' method='POST'>\n");
+    printf("<form class='menubtn' action='' method='POST'>\n");
     printf("<input type='hidden' name='sair' value='$sair'>\n");
-    printf("<titulo>Oficinas:</titulo>\n");
-    printf("<button class='ins' type='submit' formaction='./oficinasincluir.php'  >Incluir</button>\n"); # &#x1f7a5;
-    printf("<button class='alt' type='submit' formaction='./oficinasalterar.php'  >Alterar</button>\n"); # &#x1f589;
-    printf("<button class='del' type='submit' formaction='./oficinasexcluir.php'  >Excluir</button>\n"); # &#x1f7ac;
-    printf("<button class='con' type='submit' formaction='./oficinasconsultar.php'>Consultar</button>\n"); # &#x1f50d;&#xfe0e;
-    printf("<button class='lst' type='submit' formaction='./oficinaslistar.php'   >Listar</button>\n"); # &#x1f5a8;
+    printf("Oficinas:\n");
+    printf("<button class='ins' type='submit' formaction='./oficinasincluir.php'  >Incluir</button>\n");
+    printf("<button class='alt' type='submit' formaction='./oficinasalterar.php'  >Alterar</button>\n");
+    printf("<button class='del' type='submit' formaction='./oficinasexcluir.php'  >Excluir</button>\n");
+    printf("<button class='con' type='submit' formaction='./oficinasconsultar.php'>Consultar</button>\n");
+    printf("<button class='lst' type='submit' formaction='./oficinaslistar.php'   >Listar</button>\n");
     $menu=$sair-1;
     printf(($menu>0) ? "<input class='imp' type='button' value='Abertura' onclick='history.go(-$menu)'>" : "");
     printf("<input class='imp' type='button' value='Sair' onclick='history.go(-$sair)'>\n");
     printf("</form>\n");
+    printf("<p class='titulo'>$acao</p><hr>\n");
     printf("</div>\n");
-    printf("<redbold>$acao</redbold><hr>\n");
-    printf("</div>\n<br><br><br>\n");
+    printf("</div>\n");
 }
 
 function botoes($acao,$limpar,$voltar)
