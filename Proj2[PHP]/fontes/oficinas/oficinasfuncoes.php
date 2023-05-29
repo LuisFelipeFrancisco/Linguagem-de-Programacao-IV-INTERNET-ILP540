@@ -12,6 +12,7 @@ function picklist($acao)
 
     printf("<form action='./$prg' method='post'>\n");
     printf("<input type='hidden' name='bloco' value=2>\n");
+    printf("<input type='hidden' name='sair' value='$sair'>\n");
     printf("Escolha uma oficina: ");
     printf("<select name='pkoficina'>\n");
 

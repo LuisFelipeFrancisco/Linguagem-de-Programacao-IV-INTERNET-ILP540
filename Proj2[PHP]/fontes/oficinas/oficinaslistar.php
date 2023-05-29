@@ -3,9 +3,10 @@
 require_once("../../funcoes/catalogo.php");
 require_once("./oficinasfuncoes.php");
 
-$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1;
-$sair= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair']+1 : 0;
-$menu= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 1;
+$bloco=( ISSET($_POST['bloco']) ) ? $_POST['bloco'] : 1;
+$sair=$_REQUEST['sair']+1;
+$menu=$_REQUEST['sair'];
+
 $cordefundo=($bloco<3) ? TRUE : FALSE;
 
 iniciapagina(TRUE,"Oficinas","oficinas","Listar");
@@ -22,17 +23,6 @@ switch(true)
         printf("<tr><td colspan=2>Escolha a <negrito>ordem</negrito> como os dados serão exibidos no relatório:</td></tr>\n");
         printf("<tr><td>Código da Oficina.:</td><td>(<input type='radio' name='ordem' value='O.pkoficina'>)</td></tr>\n");
         printf("<tr><td>Nome da Oficina...:</td><td>(<input type='radio' name='ordem' value='O.txnomeoficina' checked>)</td></tr>\n");
-        /* printf("<tr><td colspan=2>Escolha valores para selação de <negrito>dados</negrito> do relatório:</td></tr>\n");
-        printf("<tr><td>Escolha uma especialidade:</td><td>");
-        $cmdsql="SELECT pkespecialidade,txnomeespecialidade FROM especmedicas ORDER BY txnomeespecialidade";
-        $execcmd=mysqli_query($link,$cmdsql);
-        printf("<select name='fkespecialidade'>");
-        printf("<option value='TODAS'>Todas</option>");
-        while ( $reg=mysqli_fetch_array($execcmd) )
-        {
-        printf("<option value='$reg[pkespecialidade]'>$reg[txnomeespecialidade]-($reg[pkespecialidade])</option>");
-        }
-        printf("<select>\n"); */
         printf("</td></tr>\n");
         $dtini="1901-01-01";
         $dtfim=date("Y-m-d");
@@ -47,10 +37,9 @@ switch(true)
     case ( $bloco==2 || $bloco==3 ):
     {
         $selecao=" WHERE (O.dtcadoficina between '$_REQUEST[dtcadini]' and '$_REQUEST[dtcadfim]')";
-        /* $cmdsql="SELECT * FROM oficinas AS O".$selecao." ORDER BY $_REQUEST[ordem]"; */
         $cmdsql="SELECT o.*,l.txnomelogrcompleto AS txtlogradouro FROM oficinas AS o INNER JOIN logradouroscompletos AS l ON o.fklogradouro = l.pklogradouro WHERE (o.dtcadoficina between '$_REQUEST[dtcadini]' and '$_REQUEST[dtcadfim]') ORDER BY $_REQUEST[ordem]";
         $execsql=mysqli_query($link,$cmdsql);
-        ($bloco==2) ? montamenu("Listar","$_REQUEST[sair]") : "";
+        ($bloco==2) ? montamenu("Listar","$sair") : "";
         printf("<table class='borda' border=1 style=' border-collapse: collapse;'>\n");
         printf("<tr><td class='borda' valign=top rowspan=2>Codigo</td>\n");
         printf("<td class='borda' valign=top rowspan=2>Nome da Oficina</td>\n");

@@ -4,8 +4,8 @@ require_once("../../funcoes/catalogo.php");
 require_once("./oficinasfuncoes.php");
 
 $bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1;
-$sair= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair']+1 : 0;
-$menu= ( ISSET($_REQUEST['sair']) ) ? $_REQUEST['sair'] : 1;
+$sair=$_REQUEST['sair']+1;
+$menu=$_REQUEST['sair'];
 
 iniciapagina(TRUE,"Oficinas","oficinas","Alterar");
 montamenu("Alterar",$sair);
