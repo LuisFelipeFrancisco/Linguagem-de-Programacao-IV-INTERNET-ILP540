@@ -61,14 +61,13 @@ switch (TRUE)
   }
   case ($bloco==3):
   { 
-    $cmdsql="UPDATE oficinas SET pkoficina=     '$_REQUEST[pkoficina]',
-                                pkoficina =     '$_REQUEST[pkoficina]',
-                                txnomeoficina = '$_REQUEST[txnomeoficina]',
-                                txapelido =     '$_REQUEST[txapelido]',
-                                fklogradouro =  '$_REQUEST[fklogradouro]',
-                                txcomplemento = '$_REQUEST[txcomplemento]',
-                                nucep =         '$_REQUEST[nucep]',
-                                dtcadoficina =  '$_REQUEST[dtcadoficina]'
+    $cmdsql="UPDATE oficinas SET pkoficina =     '$_REQUEST[pkoficina]',
+                                 txnomeoficina = '$_REQUEST[txnomeoficina]',
+                                 txapelido =     '$_REQUEST[txapelido]',
+                                 fklogradouro =  '$_REQUEST[fklogradouro]',
+                                 txcomplemento = '$_REQUEST[txcomplemento]',
+                                 nucep =         '$_REQUEST[nucep]',
+                                 dtcadoficina =  '$_REQUEST[dtcadoficina]'
                     WHERE pkoficina='$_REQUEST[pkoficina]'";
     
     $tentativa=TRUE;

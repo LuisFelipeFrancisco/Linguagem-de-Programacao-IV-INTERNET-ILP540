@@ -3,7 +3,7 @@
 require_once("../../funcoes/catalogo.php");
 require_once("./oficinasfuncoes.php");
 
-$bloco=( ISSET($_POST['bloco']) ) ? $_POST['bloco'] : 1;
+$bloco=( ISSET($_REQUEST['bloco']) ) ? $_REQUEST['bloco'] : 1;
 $sair=$_REQUEST['sair']+1;
 $menu=$_REQUEST['sair'];
 

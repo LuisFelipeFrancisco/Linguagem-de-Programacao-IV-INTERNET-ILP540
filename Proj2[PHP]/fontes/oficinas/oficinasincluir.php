@@ -41,7 +41,7 @@ switch(true)
         printf("<tr><td colspan=2><hr></td></tr>\n");
         printf("<tr><td>Cadastrado em:</td>  <td><input type='date' name='dtcadoficina'></td></tr>\n");
         printf("<tr><td></td>                <td>");
-        botoes("Incluir",TRUE,FALSE);
+        botoes("Incluir",TRUE,TRUE);
         printf("</td></tr>\n");
         printf("</table>\n");
         printf("</form>\n");
