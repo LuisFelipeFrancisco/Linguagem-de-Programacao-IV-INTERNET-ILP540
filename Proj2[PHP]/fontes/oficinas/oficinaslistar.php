@@ -40,8 +40,8 @@ switch(true)
         $cmdsql="SELECT o.*,l.txnomelogrcompleto AS txtlogradouro FROM oficinas AS o INNER JOIN logradouroscompletos AS l ON o.fklogradouro = l.pklogradouro WHERE (o.dtcadoficina between '$_REQUEST[dtcadini]' and '$_REQUEST[dtcadfim]') ORDER BY $_REQUEST[ordem]";
         $execsql=mysqli_query($link,$cmdsql);
         ($bloco==2) ? montamenu("Listar","$sair") : "";
-        printf("<table class='borda' border=1 style=' border-collapse: collapse;'>\n");
-        printf("<tr><td class='borda' valign=top rowspan=2>Codigo</td>\n");
+        printf("<table bgcolor='lightblue' border=1 style=' border-collapse: collapse;'>\n");
+        printf("<tr class='lighblue'><td class='borda' valign=top rowspan=2>Codigo</td>\n");
         printf("<td class='borda' valign=top rowspan=2>Nome da Oficina</td>\n");
         printf("<td class='borda' valign=top rowspan=2>Apelido</td>\n");
         printf("<td class='borda' valign=top rowspan=2>Logradouro</td>\n");
