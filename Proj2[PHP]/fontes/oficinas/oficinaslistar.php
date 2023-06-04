@@ -9,7 +9,7 @@ $menu=$_REQUEST['sair'];
 
 $cordefundo=($bloco<3) ? TRUE : FALSE;
 
-iniciapagina(TRUE,"Oficinas","oficinas","Listar");
+iniciapagina($cordefundo,"Oficinas","oficinas","Listar");
 
 switch(true)
 {
@@ -84,6 +84,6 @@ switch(true)
     }
 }
 
-terminapagina("Oficinas","Listar","oficinasconsultar.php");
+terminapagina("Oficinas","Listar","oficinaslistar.php");
 
 ?>
