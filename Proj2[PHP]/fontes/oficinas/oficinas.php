@@ -19,7 +19,7 @@ printf("<tr><td><u>Alterar</u></td><td>-</td><td>PA que permite escolher um regi
 printf("<tr><td><u>Excluir</u></td><td>-</td><td>PA que permite escolher um registro de uma tabela e excluir a linha escolhida da tabela.</td></tr>\n");
 printf("<tr><td><u>Consultar</u></td><td>-</td><td>PA que permite escolher um registro de uma tabela e mostra os dados dos registro escolhido.</td></tr>\n");
 printf("<tr><td><u>Listar</u> </td><td>-</td><td>PA que permite escolher dados e ordenação para emitir uma listagem de dados da tabela.</td></tr>\n");
-printf("<tr><td><u>Botão Abertura</u></td><td>-</td><td>Que retornam a esta página.</td></tr>\n");
+printf("<tr><td><u>Botão Abertura</u></td><td>-</td><td>Que retorna a esta página.</td></tr>\n");
 printf("<tr><td><u>Botão Sair</u></td><td>-</td><td>Que encerra a execução do sistema.</td></tr>\n");
 printf("</table>\n");
 
