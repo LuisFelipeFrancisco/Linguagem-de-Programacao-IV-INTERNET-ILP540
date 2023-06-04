@@ -1,4 +1,4 @@
-body           { font-family: TAHOMA, Arial, sans-serif; font-size: 14px; color:black; }
+body           { font-family: TAHOMA, Arial, sans-serif; font-size: 15px; color:black; }
 body.consultar     { background-color:#50C4B7; }
 body.excluir       { background-color:#FD6161; }
 body.incluir       { background-color:#00FFD9; }
@@ -18,7 +18,7 @@ button         { background-color:transparent;
                  width:85px; height:23px;
                  cursor:pointer;
                  border-radius: 10px 10px 0px 0px; }
-table,td       { border:none; font-family:Lucida Sans Typewriter; font-size:12px; }
+table,td       { border:none; font-family:TAHOMA, Arial, sans-serif; font-size:15px; }
 table.borda    { border:1px solid black; border-collapse: collapse; }
 td.borda       { border:1px solid black; border-collapse: collapse; vertical-align: text-top; }
 
