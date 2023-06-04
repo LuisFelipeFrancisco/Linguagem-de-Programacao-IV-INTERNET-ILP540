@@ -43,7 +43,6 @@ switch(true)
                 $tenta=FALSE;
                 $mostrar=TRUE;
                 $mens="Registro com código $_REQUEST[pkoficina] excluído!";
-                botoes("",FALSE,TRUE);
             }
             else
             {
